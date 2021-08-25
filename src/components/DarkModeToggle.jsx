@@ -1,11 +1,19 @@
 import classNames from "classnames";
-import React, { useState } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import PropTypes from "prop-types";
-function DarkModeToggle(props) {
+import { ThemeContext } from "../App";
+function DarkModeToggle() {
   const [toggleActive, setToggleActive] = useState(false);
+  const themeContetxCallbackFunction = useContext(ThemeContext);
+
+  useEffect(() => {
+    themeContetxCallbackFunction(toggleActive);
+  }, [toggleActive]);
+
   function handleActive(params) {
     setToggleActive(!toggleActive);
   }
+
   return (
     <div>
       <div className="flex">
@@ -50,8 +58,8 @@ function DarkModeToggle(props) {
         <span>
           <svg
             className={classNames(
-              { "text-gray-500": toggleActive },
-              { "text-gray-400": !toggleActive },
+              { "text-gray-500": !toggleActive },
+              { "text-gray-400": toggleActive },
               "h-6 w-6 "
             )}
             fill="none"
@@ -70,5 +78,11 @@ function DarkModeToggle(props) {
     </div>
   );
 }
-
+// DarkModeToggle.propTypes = {
+//   /**
+//    * @param toggleActive
+//    * suggesrs the toggle state by a callback function(toggleActive)
+//    */
+//   callback: PropTypes.func,
+// };
 export default DarkModeToggle;
