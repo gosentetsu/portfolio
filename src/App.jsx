@@ -2,7 +2,8 @@ import React, { useState } from "react";
 import Nav from "./components/Nav";
 import Footer from "./components/Footer";
 import Home from "./pages/Home";
-
+import Gallery from "./pages/Gallery";
+import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 export const ThemeContext = React.createContext(function (toggleActive) {
   console.log("ThemeContext:" + toggleActive);
 });
@@ -16,11 +17,22 @@ function App() {
           setTheme(isActive ? "dark" : "light");
         }}
       >
-        <div className="dark:bg-gray-600 flex flex-col justify-between h-screen transition">
-          <Nav></Nav>
-          <Home></Home>
-          <Footer></Footer>
-        </div>
+        <Router>
+          <div className="dark:bg-gray-700 flex flex-col justify-between h-screen transition">
+            <Nav></Nav>
+            <Switch>
+              <Route exact path="/">
+                <Home></Home>
+              </Route>
+              <Route path="/gallery">
+                <div className="flex-auto">
+                  <Gallery />
+                </div>
+              </Route>
+            </Switch>
+            <Footer></Footer>
+          </div>
+        </Router>
       </ThemeContext.Provider>
     </div>
   );

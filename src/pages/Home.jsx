@@ -3,8 +3,8 @@ import favicon from "../assets/favicon.png";
 import { Icon } from "@iconify/react";
 function Home() {
   return (
-    <div>
-      <div class="max-w-3xl px-8 py-4 mx-auto mt-16 bg-white sm:rounded-lg sm:shadow-xl dark:bg-gray-800">
+    <div className="m-8">
+      <div class="max-w-3xl mx-auto  px-8 py-4  mt-16 bg-white md:rounded-lg md:shadow-xl dark:bg-gray-800">
         <div class="flex justify-center -mt-16 md:justify-end">
           <img
             class="object-cover w-20 h-20 border-2 border-indigo-500 rounded-full dark:border-indigo-400"
@@ -40,23 +40,23 @@ function Home() {
           </p>
           <p>Decent sense of aesthetic. Hope that won't disappoint you.</p>
         </section>
-
-        <div class="flex  justify-end space-x-2 mt-4">
+        {/* 4 icons below */}
+        <div class="flex  justify-end space-x-2 mt-4  ">
           <a
             href="#"
-            class="text-xl font-medium text-indigo-500 dark:text-indigo-300"
+            class="text-xl font-medium hover:opacity-80 text-indigo-500 dark:text-indigo-300"
           >
             <Icon icon="akar-icons:github-fill" inline={true} />
           </a>
           <a
             href="#"
-            class="text-xl font-medium text-indigo-500 dark:text-indigo-300"
+            class="text-xl font-medium hover:opacity-80 text-indigo-500 dark:text-indigo-300"
           >
             <Icon icon="akar-icons:telegram-fill" inline={true} />
           </a>
           <a
             href="#"
-            class="text-xl font-medium text-indigo-500 dark:text-indigo-300"
+            class="text-xl font-medium hover:opacity-80 text-indigo-500 dark:text-indigo-300"
           >
             <Icon
               icon="ant-design:twitter-circle-filled"
@@ -66,7 +66,7 @@ function Home() {
           </a>
           <a
             href="#"
-            class="text-xl font-medium text-indigo-500 dark:text-indigo-300"
+            class="text-xl font-medium hover:opacity-80 text-indigo-500 dark:text-indigo-300"
           >
             <Icon
               icon="ant-design:zhihu-circle-filled"
