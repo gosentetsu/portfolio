@@ -4,6 +4,7 @@ import PropTypes from "prop-types";
 import { ThemeContext } from "../App";
 function DarkModeToggle() {
   const [toggleActive, setToggleActive] = useState(false);
+  //use context to callback toggle status
   const themeContetxCallbackFunction = useContext(ThemeContext);
 
   useEffect(() => {

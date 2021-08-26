@@ -18,19 +18,26 @@ function App() {
         }}
       >
         <Router>
-          <div className="dark:bg-gray-700 flex flex-col justify-between h-screen transition">
-            <Nav></Nav>
-            <Switch>
-              <Route exact path="/">
-                <Home></Home>
-              </Route>
-              <Route path="/gallery">
-                <div className="flex-auto">
-                  <Gallery />
-                </div>
-              </Route>
-            </Switch>
-            <Footer></Footer>
+          <div className="dark:bg-gray-700 flex flex-col min-h-screen justify-between static transition">
+            <div>
+              <Nav />
+            </div>
+            <div className="block">
+              <Switch>
+                <Route exact path="/">
+                  <Home></Home>
+                </Route>
+                <Route path="/gallery">
+                  <div className="flex-auto">
+                    <Gallery />
+                  </div>
+                </Route>
+              </Switch>
+            </div>
+
+            <div>
+              <Footer />
+            </div>
           </div>
         </Router>
       </ThemeContext.Provider>

@@ -3,7 +3,7 @@ import favicon from "../assets/favicon.png";
 import { Icon } from "@iconify/react";
 function Home() {
   return (
-    <div className="m-8">
+    <div className="sm:m-8">
       <div class="max-w-3xl mx-auto  px-8 py-4  mt-16 bg-white md:rounded-lg md:shadow-xl dark:bg-gray-800">
         <div class="flex justify-center -mt-16 md:justify-end">
           <img
@@ -58,21 +58,7 @@ function Home() {
             href="#"
             class="text-xl font-medium hover:opacity-80 text-indigo-500 dark:text-indigo-300"
           >
-            <Icon
-              icon="ant-design:twitter-circle-filled"
-              inline={true}
-              className="scale-110"
-            />
-          </a>
-          <a
-            href="#"
-            class="text-xl font-medium hover:opacity-80 text-indigo-500 dark:text-indigo-300"
-          >
-            <Icon
-              icon="ant-design:zhihu-circle-filled"
-              inline={true}
-              className="scale-110"
-            />
+            <Icon icon="whh:circletwitter" inline={true} />
           </a>
         </div>
       </div>
