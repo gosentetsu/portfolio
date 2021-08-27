@@ -11,12 +11,12 @@ function Gallery() {
   return (
     <div className="mx-10 mt-4 space-y-4">
       {/* declration */}
-      <div class="flex  bg-gray-50 overflow-hidden  rounded  dark:bg-gray-800">
-        <div class="w-2 bg-gray-800 dark:bg-gray-900"></div>
+      <div className="flex  bg-gray-50 overflow-hidden  rounded  dark:bg-gray-800">
+        <div className="w-2 bg-gray-800 dark:bg-gray-900"></div>
 
-        <div class="flex items-center px-2 py-3">
-          <div class="mx-3">
-            <p class="text-gray-600 dark:text-gray-200 text-lg ">
+        <div className="flex items-center px-2 py-3">
+          <div className="mx-3">
+            <p className="text-gray-600 dark:text-gray-200 text-base ">
               Here is a collection of my favotite music, movie and books
             </p>
           </div>

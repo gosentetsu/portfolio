@@ -1,16 +1,25 @@
-import React, { useRef, useState } from "react";
+import React, { useEffect, useState } from "react";
 import DarkModeToggle from "./DarkModeToggle";
 import { Icon } from "@iconify/react";
 import DarkModeButton from "./DarkModeButton";
 function Nav(props) {
   const [showDropdown, setShowDropdown] = useState(false);
-  //todo communicate two component for color theme
+  const [width, setWidth] = useState(window.innerWidth);
+  //todo: communicate two component for color theme
+  useEffect(() => {
+    function handleResize() {
+      setWidth(window.innerWidth);
+    }
+    window.addEventListener("resize", handleResize);
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
   function handleDropdown() {
     setShowDropdown(!showDropdown);
   }
-  return (
-    <div>
-      {/* nav for desktop */}
+  if (width > 640) {
+    return (
       <nav className="sm:flex hidden bg-white  dark:bg-gray-800">
         <div className="container flex items-center justify-between p-6 mx-auto text-gray-600  dark:text-gray-300">
           <a
@@ -47,7 +56,9 @@ function Nav(props) {
           <DarkModeToggle />
         </div>
       </nav>
-      {/* nav for mobile */}
+    );
+  } else
+    return (
       <nav className="sm:hidden flex">
         {/*  hide dropdown menu while click outside */}
         <button
@@ -55,7 +66,7 @@ function Nav(props) {
           hidden={!showDropdown}
           className="fixed h-screen w-screen bg-gray-50 opacity-50"
         ></button>
-        <div class="relative ml-6 mt-6 ">
+        <div className="relative ml-6 mt-6 ">
           <button
             onClick={handleDropdown}
             className="bg-pink-100 text-pink-700 p-2 rounded bg-opacity-40 hover:bg-opacity-80 dark:bg-pink-200 dark:hover:bg-opacity-90  md:block"
@@ -64,12 +75,12 @@ function Nav(props) {
           </button>
           <div
             hidden={!showDropdown}
-            class="transition-all duration-500 absolute left-0 w-48 py-2 mt-2 bg-white rounded-md shadow-xl dark:bg-gray-800"
+            className="transition-all duration-500 absolute left-0 w-48 py-2 mt-2 bg-white rounded-md shadow-xl dark:bg-gray-800"
           >
             <a
               onClick={() => setShowDropdown(false)}
               href="/"
-              class="block px-4 py-2 rounded-md mx-2 text-sm text-gray-700 capitalize transition-colors duration-200 transform dark:text-gray-300 hover:bg-blue-500 hover:text-white dark:hover:text-white"
+              className="block px-4 py-2 rounded-md mx-2 text-sm text-gray-700 capitalize transition-colors duration-200 transform dark:text-gray-300 hover:bg-blue-500 hover:text-white dark:hover:text-white"
             >
               <Icon
                 className="inline mr-1"
@@ -82,21 +93,21 @@ function Nav(props) {
             <a
               onClick={() => setShowDropdown(false)}
               href="/gallery"
-              class="block px-4 py-2 rounded-md mx-2 text-sm text-gray-700 capitalize transition-colors duration-200 transform dark:text-gray-300 hover:bg-blue-500 hover:text-white dark:hover:text-white"
+              className="block px-4 py-2 rounded-md mx-2 text-sm text-gray-700 capitalize transition-colors duration-200 transform dark:text-gray-300 hover:bg-blue-500 hover:text-white dark:hover:text-white"
             >
               Gallery
             </a>
             <a
               onClick={() => setShowDropdown(false)}
               href="projects"
-              class="block px-4 py-2 rounded-md mx-2 text-sm text-gray-700 capitalize transition-colors duration-200 transform dark:text-gray-300 hover:bg-blue-500 hover:text-white dark:hover:text-white"
+              className="block px-4 py-2 rounded-md mx-2 text-sm text-gray-700 capitalize transition-colors duration-200 transform dark:text-gray-300 hover:bg-blue-500 hover:text-white dark:hover:text-white"
             >
               Projects
             </a>
             <a
               onClick={() => setShowDropdown(false)}
               href="/blog"
-              class="block px-4 py-2 rounded-md mx-2 text-sm text-gray-700 capitalize transition-colors duration-200 transform dark:text-gray-300 hover:bg-blue-500 hover:text-white dark:hover:text-white"
+              className="block px-4 py-2 rounded-md mx-2 text-sm text-gray-700 capitalize transition-colors duration-200 transform dark:text-gray-300 hover:bg-blue-500 hover:text-white dark:hover:text-white"
             >
               Blog
             </a>
@@ -108,8 +119,7 @@ function Nav(props) {
           </div>
         </div>
       </nav>
-    </div>
-  );
+    );
 }
 
 export default Nav;

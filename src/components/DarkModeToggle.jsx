@@ -3,16 +3,18 @@ import React, { useState, useEffect, useContext } from "react";
 import PropTypes from "prop-types";
 import { ThemeContext } from "../App";
 function DarkModeToggle() {
-  const [toggleActive, setToggleActive] = useState(false);
   //use context to callback toggle status
-  const themeContetxCallbackFunction = useContext(ThemeContext);
-
-  useEffect(() => {
-    themeContetxCallbackFunction(toggleActive);
-  }, [toggleActive]);
-
-  function handleActive(params) {
+  const themeContext = useContext(ThemeContext);
+  const [toggleActive, setToggleActive] = useState(
+    themeContext.theme === "dark"
+  );
+  // useEffect(() => {
+  //   console.log("use effect:" + toggleActive);//use effect:false
+  // }, [toggleActive]);
+  function handleActive() {
     setToggleActive(!toggleActive);
+    //todo: need to clarify the execution sequence, the `toggleActive` has not been updated
+    themeContext.themeCallback(!toggleActive);
   }
 
   return (
