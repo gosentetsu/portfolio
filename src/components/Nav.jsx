@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import DarkModeToggle from "./DarkModeToggle";
 import { Icon } from "@iconify/react";
 import DarkModeButton from "./DarkModeButton";
+import { Link } from "react-router-dom";
 function Nav(props) {
   const [showDropdown, setShowDropdown] = useState(false);
   const [width, setWidth] = useState(window.innerWidth);
@@ -15,15 +16,17 @@ function Nav(props) {
       window.removeEventListener("resize", handleResize);
     };
   }, []);
+
   function handleDropdown() {
     setShowDropdown(!showDropdown);
   }
+
   if (width > 640) {
     return (
       <nav className="sm:flex hidden bg-white  dark:bg-gray-800">
         <div className="container flex items-center justify-between p-6 mx-auto text-gray-600  dark:text-gray-300">
-          <a
-            href="/"
+          <Link
+            to="/"
             className="flex bg-pink-100 text-pink-700 p-2 rounded bg-opacity-40 hover:bg-opacity-80  md:flex dark:bg-pink-200 dark:hover:bg-opacity-90 "
           >
             <Icon
@@ -32,26 +35,26 @@ function Nav(props) {
               inline={true}
             />
             Home
-          </a>
+          </Link>
           <div className="space-x-4">
-            <a
-              href="/gallery"
+            <Link
+              to="/gallery"
               className=" lg:p-2 py-2 rounded  lg:hover:bg-gray-100 lg:dark:hover:bg-gray-900"
             >
               Gallery
-            </a>
-            <a
-              href="#"
+            </Link>
+            <Link
+              to="#"
               className=" lg:p-2 py-2 rounded  lg:hover:bg-gray-100 lg:dark:hover:bg-gray-900"
             >
               Projects
-            </a>
-            <a
-              href="#"
+            </Link>
+            <Link
+              to="#"
               className=" lg:p-2 py-2 rounded  lg:hover:bg-gray-100 lg:dark:hover:bg-gray-900"
             >
               Blog
-            </a>
+            </Link>
           </div>
           <DarkModeToggle />
         </div>
@@ -64,8 +67,8 @@ function Nav(props) {
         <button
           onClick={() => setShowDropdown(false)}
           hidden={!showDropdown}
-          className="fixed h-screen w-screen bg-gray-50 opacity-50"
-        ></button>
+          className="fixed h-screen w-screen bg-gray-50 opacity-30"
+        />
         <div className="relative ml-6 mt-6 ">
           <button
             onClick={handleDropdown}
@@ -77,9 +80,9 @@ function Nav(props) {
             hidden={!showDropdown}
             className="transition-all duration-500 absolute left-0 w-48 py-2 mt-2 bg-white rounded-md shadow-xl dark:bg-gray-800"
           >
-            <a
+            <Link
               onClick={() => setShowDropdown(false)}
-              href="/"
+              to="/"
               className="block px-4 py-2 rounded-md mx-2 text-sm text-gray-700 capitalize transition-colors duration-200 transform dark:text-gray-300 hover:bg-blue-500 hover:text-white dark:hover:text-white"
             >
               <Icon
@@ -88,34 +91,33 @@ function Nav(props) {
                 inline={true}
               />
               Home
-            </a>
+            </Link>
             <hr className="scale-90 my-1" />
-            <a
+            <Link
               onClick={() => setShowDropdown(false)}
-              href="/gallery"
+              to="/gallery"
               className="block px-4 py-2 rounded-md mx-2 text-sm text-gray-700 capitalize transition-colors duration-200 transform dark:text-gray-300 hover:bg-blue-500 hover:text-white dark:hover:text-white"
             >
               Gallery
-            </a>
-            <a
+            </Link>
+            <Link
               onClick={() => setShowDropdown(false)}
-              href="projects"
+              to="projects"
               className="block px-4 py-2 rounded-md mx-2 text-sm text-gray-700 capitalize transition-colors duration-200 transform dark:text-gray-300 hover:bg-blue-500 hover:text-white dark:hover:text-white"
             >
               Projects
-            </a>
-            <a
+            </Link>
+            <Link
               onClick={() => setShowDropdown(false)}
-              href="/blog"
+              to="/blog"
               className="block px-4 py-2 rounded-md mx-2 text-sm text-gray-700 capitalize transition-colors duration-200 transform dark:text-gray-300 hover:bg-blue-500 hover:text-white dark:hover:text-white"
             >
               Blog
-            </a>
+            </Link>
             <hr className="scale-90 my-1" />
-
-            <div onClick={() => setShowDropdown(false)}>
+            <Link onClick={() => setShowDropdown(false)}>
               <DarkModeButton />
-            </div>
+            </Link>
           </div>
         </div>
       </nav>

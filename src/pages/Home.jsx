@@ -4,7 +4,7 @@ import { Icon } from "@iconify/react";
 function Home() {
   return (
     <div className="sm:m-8">
-      <div className="max-w-3xl mx-auto  px-8 py-4  mt-16 bg-white md:rounded-lg md:shadow-xl dark:bg-gray-800">
+      <div className="max-w-3xl mx-auto  px-8 py-4  mt-16  md:rounded-lg md:shadow-xl md:bg-gray-50 md:dark:bg-gray-800">
         <div className="flex justify-center -mt-16 md:justify-end">
           <img
             className="object-cover w-20 h-20 border-2 border-indigo-500 rounded-full dark:border-indigo-400"
@@ -12,7 +12,7 @@ function Home() {
             src={favicon}
           />
         </div>
-
+        {/* in */}
         <h2 className="mt-2 text-2xl font-semibold text-gray-800 dark:text-white md:mt-0 md:text-3xl">
           Hello, this is gosentetsu.
         </h2>
@@ -40,7 +40,7 @@ function Home() {
           </p>
           <p>Decent sense of aesthetic. Hope that won't disappoint you.</p>
         </section>
-        {/* 4 icons below */}
+        {/*social link icons below */}
         <div className="flex  justify-end space-x-2 mt-4  ">
           <a
             href="#"
