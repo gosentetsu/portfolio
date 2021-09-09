@@ -25,9 +25,9 @@ function Gallery() {
           </div>
         ))}
 
-        {[...Array(10).keys()].map(() => (
+        {/* {[...Array(10).keys()].map(() => (
           <div className=" bg-red-50"></div>
-        ))}
+        ))} */}
       </div>
     </div>
   );
