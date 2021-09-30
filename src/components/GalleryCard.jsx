@@ -5,7 +5,7 @@ function GalleryCard(props) {
   // console.log(props.info);
   return (
     <div>
-      <div className=" bg-white rounded-md shadow-md overflow-hidden max-w-xs dark:bg-gray-800">
+      <div className=" bg-white rounded-md shadow-lg overflow-hidden max-w-xs dark:bg-gray-800 hover:-translate-y-1 transition-all duration-500">
         <div className="flex">
           {/* left: an img */}
           <div className="flex flex-shrink-0">

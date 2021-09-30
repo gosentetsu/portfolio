@@ -1,15 +1,16 @@
 import React from "react";
 import { Icon } from "@iconify/react";
+import { Link } from "react-router-dom";
 function Footer() {
   return (
     <div>
       <footer className="flex flex-col items-center justify-between px-6 py-4 text-gray-300 dark:text-gray-500 sm:flex-row">
-        <a
-          href="/"
+        <Link
+          to="/"
           className="text-xl font-bold text-gray-400  hover:text-gray-700 dark:hover:text-gray-300"
         >
           gosentetsu
-        </a>
+        </Link>
 
         <p className="py-2   sm:py-0">
           © gosentetsu 2021 - All rights reserved

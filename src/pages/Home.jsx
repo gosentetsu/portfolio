@@ -1,12 +1,15 @@
 import React from "react";
 import favicon from "../assets/favicon.png";
 import { Icon } from "@iconify/react";
+import ReactTooltip from "react-tooltip";
 function Home() {
   return (
     <div className="sm:m-8">
       <div className="max-w-3xl mx-auto  px-8 py-4  mt-16  md:rounded-lg md:shadow-xl md:bg-gray-50 md:dark:bg-gray-800">
         <div className="flex justify-center -mt-16 md:justify-end">
+          <ReactTooltip className="max-w-xs" />
           <img
+            data-tip="This profile pic originates from Spitz's album 名前をつけてやる"
             className="object-cover w-20 h-20 border-2 border-indigo-500 rounded-full dark:border-indigo-400"
             alt="Testimonial avatar"
             src={favicon}
@@ -36,26 +39,26 @@ function Home() {
             >
               USTC(University of Science and Technology of China)
             </a>
-            , major in Software Engineer. Dream to be a full-stack.
+            , major in Software Engineering. Dream to be a full-stack.
           </p>
           <p>Decent sense of aesthetic. Hope that won't disappoint you.</p>
         </section>
         {/*social link icons below */}
         <div className="flex  justify-end space-x-2 mt-4  ">
           <a
-            href="#"
+            href="https://github.com/gosentetsu"
             className="text-xl font-medium hover:opacity-80 text-indigo-500 dark:text-indigo-300"
           >
             <Icon icon="akar-icons:github-fill" inline={true} />
           </a>
           <a
-            href="#"
+            href="https://t.me/gosentetsu"
             className="text-xl font-medium hover:opacity-80 text-indigo-500 dark:text-indigo-300"
           >
             <Icon icon="akar-icons:telegram-fill" inline={true} />
           </a>
           <a
-            href="#"
+            href="https://twitter.com/gosentetsu"
             className="text-xl font-medium hover:opacity-80 text-indigo-500 dark:text-indigo-300"
           >
             <Icon icon="whh:circletwitter" inline={true} />

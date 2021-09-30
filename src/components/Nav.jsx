@@ -6,6 +6,7 @@ import { Link } from "react-router-dom";
 function Nav(props) {
   const [showDropdown, setShowDropdown] = useState(false);
   const [width, setWidth] = useState(window.innerWidth);
+
   //todo: communicate two component for color theme
   useEffect(() => {
     function handleResize() {
@@ -27,7 +28,7 @@ function Nav(props) {
         <div className="container flex items-center justify-between p-6 mx-auto text-gray-600  dark:text-gray-300">
           <Link
             to="/"
-            className="flex bg-pink-100 text-pink-700 p-2 rounded bg-opacity-40 hover:bg-opacity-80  md:flex dark:bg-pink-200 dark:hover:bg-opacity-90 "
+            className="flex bg-pink-100 text-pink-700 p-2 rounded bg-opacity-40 hover:bg-opacity-80   dark:bg-pink-200 dark:hover:bg-opacity-90 "
           >
             <Icon
               className="mt-0.5 mr-2 w-5 h-5"
