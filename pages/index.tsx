@@ -4,7 +4,7 @@ import { TbBrandGithub, TbBrandTwitter, TbBrandTelegram } from "react-icons/tb";
 const Home: NextPage = () => {
   return (
     <Layout>
-      <div className="max-w-4xl mx-4 m-12 rounded-2xl p-8 text-slate-400 shadow-2xl shadow-slate-900 backdrop-blur-3xl">
+      <div className="max-w-2xl m-2 sm:mx-auto rounded-2xl p-8 text-slate-400 shadow-2xl shadow-slate-900 backdrop-blur-3xl">
         <h2 className="mt-2 text-2xl font-semibold">
           Hello, this is gosentetsu.
         </h2>

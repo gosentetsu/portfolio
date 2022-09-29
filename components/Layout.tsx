@@ -1,21 +1,26 @@
+import Head from "next/head";
+import { useRouter } from "next/router";
 import React from "react";
 import Nav from "@/components/Nav";
 import Footer from "@/components/Footer";
-import Head from "next/head";
-import { useRouter } from "next/router";
 
 type Props = {
   children: React.ReactNode;
 };
 
-const path2title = new Map<string, string>([
-  ["/", "Home"],
-  ["/blog", "Blog"],
-  ["/projects", "Projects"],
-]);
+const path2title = (path: string) => {
+  return (
+    path
+      .split("/")
+      .filter((s) => s !== "")
+      .reverse()
+      .join(" • ")
+      .replace(/\b\w/, (s) => s.toUpperCase()) || "Home"
+  );
+};
 export default function Layout(props: Props) {
   const router = useRouter();
-  const title = path2title.get(router.pathname);
+  const title = path2title(router.pathname);
   return (
     <>
       <Head>
