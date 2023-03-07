@@ -1,10 +1,29 @@
 import type { NextPage } from "next";
 import Layout from "@/components/Layout";
 import { TbBrandGithub, TbBrandTwitter, TbBrandTelegram } from "react-icons/tb";
+
+const contactLinks = [
+  {
+    name: "github",
+    icon: TbBrandGithub,
+    href: "https://github.com/gosentetsu",
+  },
+  {
+    name: "telegram",
+    icon: TbBrandTelegram,
+    href: "https://t.me/gosentetsu",
+  },
+  {
+    name: "twitter",
+    icon: TbBrandTwitter,
+    href: "https://twitter.com/gosentetsu",
+  },
+];
+
 const Home: NextPage = () => {
   return (
     <Layout>
-      <div className="max-w-2xl m-2 sm:mx-auto rounded-2xl p-8 text-slate-400 shadow-2xl shadow-slate-900 backdrop-blur-3xl">
+      <div className="m-2 max-w-2xl rounded-2xl p-8 text-slate-400 shadow-2xl shadow-slate-900 backdrop-blur-3xl sm:mx-auto">
         <h2 className="mt-2 text-2xl font-semibold">
           Hello, this is gosentetsu.
         </h2>
@@ -29,29 +48,20 @@ const Home: NextPage = () => {
               {" "}
               USTC(University of Science and Technology of China){" "}
             </a>
-            , major in Software Engineering. Dream to be a full-stack.
+            , major in Software Engineering.
           </p>
           <p>Decent sense of aesthetic. Hope that won&#39;t disappoint you.</p>
         </section>
         <div className="mt-4 flex justify-end space-x-3 ">
-          <a
-            href="https://github.com/gosentetsu"
-            className="text-slate-300 hover:text-slate-400 text-xl font-medium "
-          >
-            <TbBrandGithub></TbBrandGithub>
-          </a>
-          <a
-            href="https://t.me/gosentetsu"
-            className="text-slate-300 hover:text-slate-400 text-xl font-medium "
-          >
-            <TbBrandTelegram />
-          </a>
-          <a
-            href="https://twitter.com/gosentetsu"
-            className="text-slate-300 hover:text-slate-400 text-xl font-medium "
-          >
-            <TbBrandTwitter />
-          </a>
+          {contactLinks.map((item) => (
+            <a
+              key={item.name}
+              href={item.href}
+              className="text-xl font-medium text-slate-300 hover:text-slate-400 "
+            >
+              <item.icon />
+            </a>
+          ))}
         </div>
       </div>
     </Layout>

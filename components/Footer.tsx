@@ -2,7 +2,7 @@ import React from "react";
 
 export default function Footer() {
   return (
-    <footer className="p-10 w-full ease-in-out bg-slate-800 text-slate-400 flex justify-evenly content-around gap-3 flex-wrap">
+    <footer className="flex w-full flex-wrap content-around justify-evenly gap-3 bg-slate-800 p-10 text-slate-400 ease-in-out">
       <ul className="flex-auto space-y-2">
         <li>Home</li>
         <li>Project</li>
@@ -41,14 +41,14 @@ export default function Footer() {
         <li>
           Powered by{" "}
           <a
-            className="hover:text-slate-400 duration-500 ease-linear"
+            className="duration-500 ease-linear hover:text-slate-400"
             href="https://tailwindcss.com/"
           >
             tailwindcss
           </a>{" "}
           and{" "}
           <a
-            className="hover:text-slate-400 duration-500 ease-linear"
+            className="duration-500 ease-linear hover:text-slate-400"
             href="https://nextjs.org/"
           >
             nextjs
@@ -57,7 +57,7 @@ export default function Footer() {
         <li>
           Hosted on{" "}
           <a
-            className="hover:text-slate-400 duration-500 ease-linear"
+            className="duration-500 ease-linear hover:text-slate-400"
             href="https://verce.com"
           >
             ▲Vercel
