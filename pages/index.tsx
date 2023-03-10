@@ -1,7 +1,8 @@
 import type { NextPage } from "next";
 import Layout from "@/components/Layout";
 import { TbBrandGithub, TbBrandTwitter, TbBrandTelegram } from "react-icons/tb";
-
+import useLoaded from "@/hooks/useLoaded";
+import clsx from "clsx";
 const contactLinks = [
   {
     name: "github",
@@ -21,13 +22,19 @@ const contactLinks = [
 ];
 
 const Home: NextPage = () => {
+  const loaded = useLoaded();
   return (
     <Layout>
-      <div className="m-2 max-w-2xl rounded-2xl p-8 text-slate-400 shadow-2xl shadow-slate-900 backdrop-blur-3xl sm:mx-auto">
-        <h2 className="mt-2 text-2xl font-semibold">
+      <div
+        className={clsx(
+          loaded && "fade-in-start",
+          "m-2 max-w-2xl rounded-2xl p-8 text-slate-400 shadow-2xl shadow-slate-900 backdrop-blur-3xl sm:mx-auto"
+        )}
+      >
+        <h2 data-fade="1" className="mt-2 text-2xl font-semibold">
           Hello, this is gosentetsu.
         </h2>
-        <section className="mt-8 space-y-2">
+        <section data-fade="2" className="mt-8 space-y-2">
           <p>
             Python is tasty. JavaScript is juicy. TypeScript is toothsome.
             PyTorch is creamy. Vue is yummy. Happen to know some React now. Java
@@ -52,7 +59,7 @@ const Home: NextPage = () => {
           </p>
           <p>Decent sense of aesthetic. Hope that won&#39;t disappoint you.</p>
         </section>
-        <div className="mt-4 flex justify-end space-x-3 ">
+        <div data-fade="3" className="mt-4 flex justify-end space-x-3 ">
           {contactLinks.map((item) => (
             <a
               key={item.name}
