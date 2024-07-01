@@ -11,10 +11,12 @@ export default function Nav() {
     <nav className="sticky top-0 z-10 h-16 w-full font-bold backdrop-blur-md">
       <div className="flex h-full items-center justify-start space-x-6 pl-6 align-middle sm:pl-10">
         {routes.map((route) => (
-          <Link href={route.href} key={route.name}>
-            <a className=" text-slate-400 transition-colors hover:text-slate-300">
-              {route.name}
-            </a>
+          <Link
+            href={route.href}
+            key={route.name}
+            className=" text-slate-400 transition-colors hover:text-slate-300"
+          >
+            {route.name}
           </Link>
         ))}
       </div>
